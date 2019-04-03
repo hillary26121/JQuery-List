@@ -1,16 +1,37 @@
 var textBox = $("#text-box");
-var addButton = $("#add-button");
 var list = $("#list");
-//var value = textBox.val();
-var node = document.createElement("li");
 
+// Button Click Event
 
+$("#add-button").click( function() {
 
-$(document).on("click", addButton, function(){
-  var listItem = textBox.val();
-  $(node).text(listItem);
-  list.append(node);
+  if( textBox.val() != "" ){
+    var newListItem = '<li class="list-item">' + textBox.val() + '</li>';
+    list.append(newListItem);
+    textBox.val("");
+
+  }
 });
+
+$(document).on("click", ".list-item", function() {
+      $(this).remove();
+});
+
+
+
+
+
+
+
+
+
+
+//$(document).on("click", addButton, function(){
+//  var listItem = textBox.val();
+//  $(node).text(listItem);
+  //list.append(node);
+
+//});
 
 
 //
